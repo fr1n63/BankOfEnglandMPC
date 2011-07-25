@@ -1,0 +1,42 @@
+
+/* for Internet Explorer */
+/*\*/
+* html #boempc_header .description {
+    height:auto;
+    height: 90px;
+}
+/**/
+
+/* for Internet Explorer */
+/*\*/
+* html #boempc_results .month {
+    height:auto;
+    height:1;
+}
+/**/
+
+/* for Internet Explorer */
+/*\*/
+* html #boempc_results .month .over {
+    height:auto;
+    height: 100%;
+}
+/**/
+
+
+/* for Internet Explorer */
+/*\*/
+* html #boempc_results .month .over
+{
+    width: 50px;
+}
+/**/
+
+/* for Internet Explorer */
+/*\*/
+* html #boempc_results .callout .content .contentInner
+{
+    width: 120px;
+}
+/**/
+

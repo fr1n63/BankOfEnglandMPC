@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+
+    <!--script type="text/javascript" src="js/lib/jquery-1.6.1.min.js"></script-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+    <!-- JS_START -->
+    <script type="text/javascript" src="js/lib/raphael-min.js"></script>
+
+    <script type="text/javascript" src="js/lib/underscore.js"></script>
+    <script type="text/javascript" src="js/lib/backbone-min.js"></script>
+    <script type="text/javascript" src="js/lib/modernizr.custom.59021.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.animate-enhanced.min.js"></script>
+
+    <script type="text/javascript" src="js/gui/shared/utils/ArrayUtil.js"></script>
+    <script type="text/javascript" src="js/gui/shared/utils/MapUtil.js"></script>
+    <script type="text/javascript" src="js/gui/shared/utils/StringUtil.js"></script>
+    <script type="text/javascript" src="js/gui/shared/data/BaseCSVParser.js"></script>
+    <script type="text/javascript" src="js/gui/shared/facebook/Facebook.js"></script>
+    <script type="text/javascript" src="js/gui/shared/date/Date.js"></script>
+
+    <script type="text/javascript" src="js/gui/bankofenglandmpc/BankOfEnglandMPC.js"></script>
+    <script type="text/javascript" src="js/gui/bankofenglandmpc/view/GraphView.js"></script>
+    <script type="text/javascript" src="js/gui/bankofenglandmpc/view/HeaderView.js"></script>
+    <script type="text/javascript" src="js/gui/bankofenglandmpc/view/MembersView.js"></script>
+    <script type="text/javascript" src="js/gui/bankofenglandmpc/view/ResultsView.js"></script>
+    <script type="text/javascript" src="js/gui/bankofenglandmpc/view/Chart.js"></script>
+    <script type="text/javascript" src="js/gui/bankofenglandmpc/model/model.js"></script>
+    <script type="text/javascript" src="js/gui/bankofenglandmpc/parser/MembersCSVParser.js"></script>
+    <script type="text/javascript" src="js/gui/bankofenglandmpc/parser/DecisionsCSVParser.js"></script>
+    <!-- JS_END -->
+
+    <!-- CSS_START -->
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <!--[if IE]>
+      <link rel="stylesheet" href="css/style_ie.css" type="text/css"/><![endif]-->
+    <!-- CSS_END -->
+
+    <script type="text/javascript">
+
+        $(document).ready(function()
+        {
+            $.ajax("templates/boe_mpc.html").success(function(response)
+            {
+                $("body").append(response);
+
+                //http://resource.guim.co.uk/interactiveresource/interactivedata/mpc_decisions
+                //http://resource.guim.co.uk/interactiveresource/interactivedata/mpc_members
+
+                var membersUrl = "members.txt";
+                var decisionsUrl = "decisions.txt";
+
+                var bankOfEnglandMPC = new gui.bankofenglandmpc.BankOfEnglandMPC({ el: $("#bankOfEnglandMPC"), membersUrl:membersUrl, decisionsUrl:decisionsUrl });
+
+                 /*
+                 var facebookConnector = new gui.facebook.Facebook({
+                      appId  : '106500279431406',
+                      status : false, // check login status
+                      cookie : true, // enable cookies to allow the server to access the session
+                      xfbml  : true  // parse XFBML
+                  });
+                  */
+            });
+
+
+        });
+
+    </script>
+
+
+</head>
+<body>
+
+<div class="boxShadow">
+    <div id="bankOfEnglandMPC"></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<script type="text/template" id="template_boempc_baseView">
+    <div id="boempc_header">Header</div>
+    <div>
+        <div id="boempc_members">Menu</div>
+        <div style="float:left;">
+            <div id="boempc_results">Main</div>
+            <div id="boempc_graph">Graph</div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</script>
+
+<script type="text/template" id="template_boempc_header">
+    <div class="monthTitle"><%= month %> <%= year %></div>
+    <div>
+        <div class="title"><%= title %></div>
+        <div class="description">
+            <div><%= description %></div>
+            <%
+            if (article_url != "")
+            {
+                print('<div class="readfull"><a href="' + article_url + '" target="bankofengland_mpc">Read full article &raquo;</a></div>');
+            }
+            %>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</script>
+
+
+<script type="text/template" id="template_boempc_members">
+    <div class="memberlist"></div>
+    <div class="splitter"></div>
+    <div class="memberdetail"></div>
+</script>
+
+<script type="text/template" id="template_boempc_membername">
+    <div class="memberName">
+        <div class="memberBullet"></div><div class="memberLabel"><%= name %></div>
+    </div>
+    <div style="clear:both;"></div>
+
+</script>
+
+<script type="text/template" id="template_boempc_memberdetail">
+    <div class="memberDetailDisplay">
+        <div class="name"><%= name %></div>
+        <%
+        if (image)
+        {
+            print('<img src="' + image + '" alt="' + name + '">');
+        }
+        %>
+        <div class="bio"><%= bio %></div>
+    </div>
+</script>
+
+<script type="text/template" id="template_boempc_results">
+    <div class="months"></div>
+       <!--
+    <div class="keys">
+        <div class="voteKey">
+            <div class="raise voteKeyBox"></div> Vote for Raise
+        </div>
+        <div class="voteKey">
+            <div class="hold voteKeyBox"></div> Vote for Hold
+        </div>
+        <div class="voteKey">
+            <div class="lower voteKeyBox"></div> Vote for Lower
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+    -->
+</script>
+
+<script type="text/template" id="template_boempc_monthtable">
+    <div class="month">
+        <div class="monthLabel"><%= month %></div>
+        <div class="resultLabel"><img class="valigner"><%= change %></div>
+        <div>
+            <div class="raise"></div>
+            <div class="hold"></div>
+            <div class="lower"></div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="template_boempc_graph">
+    <div class="title">Interest rates along the last 12 months</div>
+    <div class="graphPanel"></div>
+</script>
+
+<script type="text/template" id="template_boempc_callout">
+    <div class="callout">
+
+        <div class="content">
+            <div class="contentOuter">
+                <div class="contentMiddle">
+                    <div class="contentInner">
+                        <%= name %> <%= extentOfChange %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="arrow"></div>
+
+    </div>
+</script>
