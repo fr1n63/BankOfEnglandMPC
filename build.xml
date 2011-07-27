@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<project name="BankOfEnglandMPC" default="build" basedir=".">
+
+    <target name="build" description="Minifies the js and css and compresses the output for distribution">
+        <exec executable="rake">
+				<arg line="build" />
+		</exec>
+    </target>
+    <target name="decouple" description="Deletes the .git folder from a copied project template">
+        <exec executable="rake">
+				<arg line="decouple" />
+		</exec>
+    </target>
+</project>
