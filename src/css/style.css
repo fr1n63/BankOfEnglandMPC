@@ -156,6 +156,12 @@ div {
     margin-bottom: 5px;
 }
 
+#boempc_members .memberDetailDisplay img
+{
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
 #boempc_results
 {
     position: relative;

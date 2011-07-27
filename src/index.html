@@ -3,8 +3,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
 
-    <!--script type="text/javascript" src="js/lib/jquery-1.6.1.min.js"></script-->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-1.6.1.min.js"></script>
+    <!--script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script-->
 
     <!-- JS_START -->
     <script type="text/javascript" src="js/lib/raphael-min.js"></script>
@@ -15,10 +15,8 @@
     <script type="text/javascript" src="js/lib/jquery.animate-enhanced.min.js"></script>
 
     <script type="text/javascript" src="js/gui/shared/utils/ArrayUtil.js"></script>
-    <script type="text/javascript" src="js/gui/shared/utils/MapUtil.js"></script>
     <script type="text/javascript" src="js/gui/shared/utils/StringUtil.js"></script>
     <script type="text/javascript" src="js/gui/shared/data/BaseCSVParser.js"></script>
-    <script type="text/javascript" src="js/gui/shared/facebook/Facebook.js"></script>
     <script type="text/javascript" src="js/gui/shared/date/Date.js"></script>
 
     <script type="text/javascript" src="js/gui/bankofenglandmpc/BankOfEnglandMPC.js"></script>
@@ -46,22 +44,15 @@
             {
                 $("body").append(response);
 
-                //http://resource.guim.co.uk/interactiveresource/interactivedata/mpc_decisions
-                //http://resource.guim.co.uk/interactiveresource/interactivedata/mpc_members
+                /*
+                var membersUrl = "http://resource.guim.co.uk/interactiveresource/interactivedata/mpc_decisions";
+                var decisionsUrl = "http://resource.guim.co.uk/interactiveresource/interactivedata/mpc_members";
+                */
 
                 var membersUrl = "members.txt";
                 var decisionsUrl = "decisions.txt";
 
                 var bankOfEnglandMPC = new gui.bankofenglandmpc.BankOfEnglandMPC({ el: $("#bankOfEnglandMPC"), membersUrl:membersUrl, decisionsUrl:decisionsUrl });
-
-                 /*
-                 var facebookConnector = new gui.facebook.Facebook({
-                      appId  : '106500279431406',
-                      status : false, // check login status
-                      cookie : true, // enable cookies to allow the server to access the session
-                      xfbml  : true  // parse XFBML
-                  });
-                  */
             });
 
 
@@ -73,9 +64,7 @@
 </head>
 <body>
 
-<div class="boxShadow">
-    <div id="bankOfEnglandMPC"></div>
-</div>
+<div id="bankOfEnglandMPC"></div>
 
 </body>
 </html>

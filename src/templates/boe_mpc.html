@@ -45,32 +45,17 @@
 <script type="text/template" id="template_boempc_memberdetail">
     <div class="memberDetailDisplay">
         <div class="name"><%= name %></div>
-        <%
+        <div class="bio"><%
         if (image)
         {
-            print('<img src="' + image + '" alt="' + name + '">');
+            print('<img src="' + image + '" align="left" alt="' + name + '">');
         }
-        %>
-        <div class="bio"><%= bio %></div>
+        %><%= bio %></div>
     </div>
 </script>
 
 <script type="text/template" id="template_boempc_results">
     <div class="months"></div>
-       <!--
-    <div class="keys">
-        <div class="voteKey">
-            <div class="raise voteKeyBox"></div> Vote for Raise
-        </div>
-        <div class="voteKey">
-            <div class="hold voteKeyBox"></div> Vote for Hold
-        </div>
-        <div class="voteKey">
-            <div class="lower voteKeyBox"></div> Vote for Lower
-        </div>
-        <div style="clear:both;"></div>
-    </div>
-    -->
 </script>
 
 <script type="text/template" id="template_boempc_monthtable">
