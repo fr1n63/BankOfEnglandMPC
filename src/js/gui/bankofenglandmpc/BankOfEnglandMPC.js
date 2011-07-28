@@ -22,37 +22,42 @@ gui.bankofenglandmpc = gui.bankofenglandmpc || {};
 
 			this.model = new gui.bankofenglandmpc.Model();
 
-			var membersLoadedFunc = function(response)
+			var membersLoadedFunc = function(response, success)
 			{
-				this.membersLoaded(response);
+				this.membersLoaded(response, success);
 			};
 			membersLoadedFunc = _.bind(membersLoadedFunc, this);
 
-			$.ajax(this.membersUrl).success(membersLoadedFunc);
+            $.ss(this.membersUrl).send(membersLoadedFunc);
 
         },
 
-		membersLoaded:function(response)
+		membersLoaded:function(response, success)
 		{
+			if (success)
+			{
 				var parser = new gui.bankofenglandmpc.MembersCsvParser();
 				this.model.setMembers(parser.parse(response));
 
-				var decisionsLoadedFunc = function(response)
+				var decisionsLoadedFunc = function(response, success)
 				{
-					this.decisionsLoaded(response);
+					this.decisionsLoaded(response, success);
 				};
 				decisionsLoadedFunc = _.bind(decisionsLoadedFunc, this);
 
-				$.ajax(this.decisionsUrl).success(decisionsLoadedFunc);
+				$.ss(this.decisionsUrl).send(decisionsLoadedFunc);
+			}
+		},
 
-			},
-
-			decisionsLoaded:function(response)
+		decisionsLoaded:function(response, success)
+		{
+			if (success)
 			{
-					var parser = new gui.bankofenglandmpc.DecisionsCsvParser(this.model.get("members"));
-					this.model.setDecisions(parser.parse(response));
-					this.render();
-			},
+				var parser = new gui.bankofenglandmpc.DecisionsCsvParser(this.model.get("members"));
+				this.model.setDecisions(parser.parse(response));
+				this.render();
+			}
+		},
 
 
         render: function ()

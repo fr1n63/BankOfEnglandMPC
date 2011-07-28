@@ -3,8 +3,9 @@
      <meta charset="utf-8" />
      <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
  
-     <script type="text/javascript" src="js/lib/jquery-1.6.1.min.js"></script>
-     <!--script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script-->
+     <!--script type="text/javascript" src="js/lib/jquery-1.6.1.min.js"></script-->
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+ 
  
      <script type='text/javascript' src='js/project.js'></script>
  
@@ -19,14 +20,29 @@
                  $("body").append(response);
  
                  /*
-                 var membersUrl = "http://resource.guim.co.uk/interactiveresource/interactivedata/mpc_decisions";
-                 var decisionsUrl = "http://resource.guim.co.uk/interactiveresource/interactivedata/mpc_members";
-                 */
+                  var membersUrl = "http://resource.guim.co.uk/interactiveresource/interactivedata/mpc_members";
+                  var decisionsUrl = "http://resource.guim.co.uk/interactiveresource/interactivedata/mpc_decisions";
  
                  var membersUrl = "members.txt";
                  var decisionsUrl = "decisions.txt";
+                  */
+ 
+                 var membersUrl = "http://spreadsheets.google.com/tq?key=0Aq-FnOoJcl-ndHdtTms5X1hEX1AwV3cydnZFNnE3M3c&gid=1";
+                 var decisionsUrl = "http://spreadsheets.google.com/tq?key=0Aq-FnOoJcl-ndHdtTms5X1hEX1AwV3cydnZFNnE3M3c&gid=0";
  
                  var bankOfEnglandMPC = new gui.bankofenglandmpc.BankOfEnglandMPC({ el: $("#bankOfEnglandMPC"), membersUrl:membersUrl, decisionsUrl:decisionsUrl });
+                   /*
+                 var SS_URL = "http://spreadsheets.google.com/tq?key=0Aq-FnOoJcl-ndHdtTms5X1hEX1AwV3cydnZFNnE3M3c&gid=1";
+                 $.ss(SS_URL)
+                   //.setQuery("select * where B like 'test%'")
+                   //.setField("time,title,address,foo,bar,baz,hoge,piyo")
+                   .send(function(success){
+                     if(!success) return;
+                     this.each(function(i){
+                       console.log(i,this);
+                      })
+                   });
+                   */
              });
  
  
