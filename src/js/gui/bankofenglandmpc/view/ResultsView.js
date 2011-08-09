@@ -23,8 +23,6 @@ gui.bankofenglandmpc = gui.bankofenglandmpc || {};
 			this.model.bind("change:hoverMember", this.showHoverMember);
 			this.model.bind("change:decision", this.showDecision);
 			this.render();
-
-			this.delegateEvents(this.events());
 		},
 
 		render: function()
@@ -118,7 +116,7 @@ gui.bankofenglandmpc = gui.bankofenglandmpc || {};
 				}
 			}
 			return eventObj;
-		},
+		}(),
 
 		selectMember: function(event)
 		{

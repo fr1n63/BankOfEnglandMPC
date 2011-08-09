@@ -22,8 +22,6 @@ gui.bankofenglandmpc = gui.bankofenglandmpc || {};
 			this.model.bind("change:member", this.showMember);
 
 			this.render();
-
-			this.delegateEvents(this.events());
 		},
 
 		render: function()
@@ -64,17 +62,17 @@ gui.bankofenglandmpc = gui.bankofenglandmpc || {};
 			if (Modernizr.touch)
 			{
 				eventObj = {
-					"touchstart div[class=memberName]" : "selectMember"
+					'touchstart div[class="memberName"]' : "selectMember"
 				}
 			}
 			else
 			{
 				eventObj = {
-					"click div[class=memberName]": "selectMember"
+					'click div[class="memberName"]': "selectMember"
 				}
 			}
 			return eventObj;
-		},
+		}(),
 
 		selectMember: function(event)
 		{

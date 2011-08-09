@@ -1,7 +1,14 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
+
+    <!-- CSS_START -->
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <!--[if IE]>
+      <link rel="stylesheet" href="css/style_ie.css" type="text/css"/><![endif]-->
+    <!-- CSS_END -->
 
     <!--script type="text/javascript" src="js/lib/jquery-1.6.1.min.js"></script-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -10,7 +17,7 @@
     <script type="text/javascript" src="js/lib/raphael-min.js"></script>
 
     <script type="text/javascript" src="js/lib/underscore.js"></script>
-    <script type="text/javascript" src="js/lib/backbone-min.js"></script>
+    <script type="text/javascript" src="js/lib/backbone.js"></script>
     <script type="text/javascript" src="js/lib/modernizr.custom.59021.js"></script>
     <script type="text/javascript" src="js/lib/jquery.animate-enhanced.min.js"></script>
     <script type="text/javascript" src="js/lib/jquery.google.spreadsheet.js"></script>
@@ -28,12 +35,6 @@
     <script type="text/javascript" src="js/gui/bankofenglandmpc/parser/DecisionsParser.js"></script>
     <!-- JS_END -->
 
-    <!-- CSS_START -->
-    <link rel="stylesheet" href="css/style.css" type="text/css"/>
-    <!--[if IE]>
-      <link rel="stylesheet" href="css/style_ie.css" type="text/css"/><![endif]-->
-    <!-- CSS_END -->
-
     <script type="text/javascript">
 
         $(document).ready(function()
@@ -48,10 +49,10 @@
 
                 var membersUrl = "members.txt";
                 var decisionsUrl = "decisions.txt";
-                 */
-
+                      */
                 var membersUrl = "http://spreadsheets.google.com/tq?key=0Aq-FnOoJcl-ndHdtTms5X1hEX1AwV3cydnZFNnE3M3c&gid=1";
                 var decisionsUrl = "http://spreadsheets.google.com/tq?key=0Aq-FnOoJcl-ndHdtTms5X1hEX1AwV3cydnZFNnE3M3c&gid=0";
+
 
                 var bankOfEnglandMPC = new gui.bankofenglandmpc.BankOfEnglandMPC({ el: $("#bankOfEnglandMPC"), membersUrl:membersUrl, decisionsUrl:decisionsUrl });
             });

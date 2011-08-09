@@ -199,8 +199,8 @@ div {
 #boempc_results .month .over
 {
     position:absolute;
-    top: 0;
-    left: -5;
+    top: 0px;
+    left: -5px;
     width: 48px;
     height:100%;
     border-left: 1px dashed #a7a9ac;
@@ -230,7 +230,6 @@ div {
     display: table;
     height: 60px;
     #position: relative;
-    overflow: hidden;
 }
 #boempc_results .callout .content .contentMiddle
 {
@@ -257,23 +256,23 @@ div {
     position:absolute;
     width: 10px;
     height: 18px;
-    top: 4;
+    top: 4px;
 }
 #boempc_results .callout.left .content
 {
-    left: 0;
+    left: 0px;
 }
 #boempc_results .callout.left .arrow
 {
-    left: 119;
+    left: 119px;
 }
 #boempc_results .callout.right .content
 {
-    left: 9;
+    left: 9px;
 }
 #boempc_results .callout.right .arrow
 {
-    left: 0;
+    left: 0px;
 }
 
 #boempc_results ul
